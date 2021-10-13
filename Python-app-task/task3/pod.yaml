@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-demo-pod
+  Label:
+    app: 'mysql'
+spec:
+  containers:
+  - name: demo
+    image: mysql
+    containerPort: 3302
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: demo-secret
+          key: rootPassword
+    - name: MYSQL_DATABASE
+      valueFrom:
+        secretKeyRef:
+          name: demo-secret
+          key: database
+    - name: MYSQL_USER
+      valueFrom:
+        secretKeyRef:
+          name: demo-secret
+          key: username
+    - name: MYSQL_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: demo-secret
+          key: password

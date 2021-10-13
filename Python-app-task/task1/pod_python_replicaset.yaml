@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: python-dev-controller
+  labels:
+    app: phello-world-python-replica
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: hello-world-python
+  template:
+    metadata: 
+      labels:
+        app: hello-world-python
+    spec: 
+      containers:
+      - name: nags-python-app
+        image: nagasaim/python-docker-dev
+        ports:
+        - containerPort: 5000

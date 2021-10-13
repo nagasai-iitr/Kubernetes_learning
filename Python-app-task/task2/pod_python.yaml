@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-python
+  labels:
+    app: hello-docker-python
+spec: 
+  containers:
+  - name: nags-python-app
+    image: nagasaim/python-docker-dev
+    ports:
+    - name: python-app-port
+      containerPort: 5000

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: helloworld-controller
+  labels:
+    app: hello-world
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata: 
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: nags-k8s-demo
+        image: arjunachari12/k8s-demo
+        ports:
+        - name: nodejs-port
+          containerPort: 3000

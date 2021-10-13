@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: pod-python-replica
+  labels:
+    app: hello-docker-python-replica
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: hello-docker-python
+  template:
+    metadata: 
+      labels:
+        app: hello-docker-python
+    spec: 
+      containers:
+      - name: nags-python-app
+        image: nagasaim/python-docker-dev
+        ports:
+        - name: python-app-port
+          containerPort: 5000

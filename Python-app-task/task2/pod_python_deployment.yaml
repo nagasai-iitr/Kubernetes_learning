@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-python-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: hello-docker-python
+  template:
+    metadata:
+      labels:
+        app: hello-docker-python
+    spec: 
+      containers:
+      - name: nags-python-app
+        image: nagasaim/python-docker-dev
+        ports:
+        - name: python-app-port
+          containerPort: 5000

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod-python-service
+spec:
+  ports:
+  - port: 31234
+    nodePort: 31235
+    targetPort: python-app-port
+    protocol: TCP
+  selector:
+    app: hello-docker-python
+  type: NodePort

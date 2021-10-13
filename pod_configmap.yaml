@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pod-configmap
+data:
+  parameter1: "I have no name"
+  parameter2: "1234567890"

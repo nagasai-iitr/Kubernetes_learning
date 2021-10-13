@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: configmap-demo-pod
+spec:
+  containers:
+  - name: demo
+    image: alpine
+    command: ["sleep", "3600"]
+    env:
+    - name: parameter
+      valueFrom:
+        configMapKeyRef:
+          name: pod-configmap
+          key: parameter1
