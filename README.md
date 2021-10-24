@@ -11,3 +11,5 @@ Hey this is for testing the git pull script from remote
 Hey this is for testing the git pull script from remote trial 2
 
 test for changes to accomodate git bpull
+
+test for changes to accomodate gitpull from triggering the command through jenkins V1.01
