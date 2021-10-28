@@ -26,6 +26,11 @@ test for changes to accomodate gitpull from triggering the command through jenki
 
 odate gitpull from triggering the command through jenkins V1.05
 
+gitpull from triggering the command through jenkins V1.06
+
+
+
+
 
 
 
